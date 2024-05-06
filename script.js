@@ -2,15 +2,14 @@
 
 const teamMembers = [
   {
-    name: "Lionel Messi",
-    age: 36,
-    activePlayer: true,
-    position: "forward",
-    strengths: "Ball Control",
+    name: "Son Goku",
+    age: 47,
+    race: "Sayian",
+    strengths: "",
     weaknesses: "heading ability",
-    skills: ["Dribbling", "Shooting", "Passing"],
+    skills: ["Kamehameha", "Kaioken", "Passing"],
     biography:
-      "Lionel Messi is considered one of the greatest players of all time.",
+      "The Sayian who was raised on Earth.",
   },
 ];
 
