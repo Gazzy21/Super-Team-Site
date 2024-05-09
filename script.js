@@ -4,23 +4,41 @@ const teamMembers = [
   {
     name: "Son Goku",
     age: 47,
-    race: "Sayian",
+    race: "Saiyan",
     strengths: "Strength",
     weaknesses: "Unconditional Mercy",
     skills: ["Kamehameha", "Kaioken", "Martial Arts"],
-    transformations: ["Super Sayian", "Super Sayian 2", "Super Sayian 3", "Super Sayian 4", "Super Sayian God", "Super Sayian Blue (SSGSS)", "Ultra Instinct", "Mastered Ultra Instinct"],
-    biography: "The Sayian who was raised on Earth.",
+    transformations: [
+      "Super Saiyan",
+      "Super Saiyan 2",
+      "Super Saiyan 3",
+      "Super Saiyan 4",
+      "Super Saiyan God",
+      "Super Saiyan Blue (SSGSS)",
+      "Ultra Instinct",
+      "Mastered Ultra Instinct",
+    ],
+    biography: "The Saiyan who was raised on Earth.",
     img: "goku.webp",
   },
   {
     name: "Vegeta",
     age: 48,
-    race: "Sayian",
+    race: "Saiyan",
     strengths: "Strength",
-    weaknesses: "Unconditional Mercy",
-    skills: ["Kamehameha", "Kaioken", "Martial Arts"],
-    transformations: ["Super Sayian", "Super Sayian 2", "Super Sayian 3", "Super Sayian 4", "Super Sayian God", "Super Sayian Blue (SSGSS)", "Ultra Instinct", "Mastered Ultra Instinct"],
-    biography: "The Prince of all Sayians.",
+    weaknesses: "Family",
+    skills: ["Galick Gun", "Majin Mark", "Martial Arts"],
+    transformations: [
+      "Super Saiyan",
+      "Super Saiyan 2",
+      "Super Saiyan 3",
+      "Super Saiyan 4",
+      "Super Saiyan God",
+      "Super Saiyan Blue (SSGSS)",
+      "Super Saiyan Blue Evolution",
+      "Ultra Ego",
+    ],
+    biography: "The Prince of all Saiyans.",
     img: "vegeta.webp",
   },
   {
@@ -34,6 +52,30 @@ const teamMembers = [
     biography: "Namekian who tried to destroy Earth.",
     img: "piccolo.webp",
   },
+  {
+    name: "Gohan",
+    age: 27,
+    race: "Saiyan",
+    strengths: "Intelligence",
+    weaknesses: "Unconditional Mercy",
+    skills: ["Special Beam Cannon", "Masenko", "Father-Son Kamehameha"],
+    transformations: ["Super Saiyan", "Super Saiyan 2", "Mystic", "Beast"],
+    biography: "Son of a true warrior.",
+    img: "gohan.png",
+  },
+  {
+    name: "Android 17",
+    age: 47,
+    race: "Android",
+    strengths: "Strength",
+    weaknesses: "Unconditional Mercy",
+    skills: ["Kamehameha", "Kaioken", "Martial Arts"],
+    transformations: [
+      "Super 17",
+    ],
+    biography: "The Saiyan who was raised on Earth.",
+    img: "Android17.webp",
+  },
 ];
 
 function generateTeamCards() {
@@ -41,26 +83,29 @@ function generateTeamCards() {
 
   teamMembers.forEach((member) => {
     const card = document.createElement("div");
-    card.classList.add("col-md-4");
+    card.classList.add("col-md-3");
 
     // style the bg color based on position
 
     let backgroundColor;
 
     switch (member.race.toLowerCase()) {
-      case "sayian":
+      case "saiyan":
         backgroundColor = "yellow";
         break;
       case "namekian":
         backgroundColor = "green";
         break;
+      case "android":
+          backgroundColor = "blue";
+          break;
     }
 
     card.style.backgroundColor = backgroundColor;
 
     card.innerHTML = `
     <div class="card divcardborders">
-    <img src="${member.img}" class="card-img-top">
+    <img src="${member.img}" class="card-img-top imgsizing1">
     <div class="card-body">
       <h1 class="card-title">${member.name}</h5>
       <h3 class="card-text">${member.biography}</h3>
