@@ -18,27 +18,27 @@ const teamMembers = [
       "Ultra Instinct",
       "Mastered Ultra Instinct",
     ],
-    biography: "The Saiyan who was raised on Earth.",
+    biography: "The Legendary Saiyan",
     img: "goku.webp",
   },
   {
     name: "Vegeta",
     age: 48,
     race: "Saiyan",
-    strengths: "Strength",
-    weaknesses: "Family",
-    skills: ["Galick Gun", "Majin Mark", "Martial Arts"],
+    strengths: "Pride",
+    weaknesses: "Arrogance",
+    skills: ["Galick Gun", "Final Flash", "Big Bang Attack"],
     transformations: [
       "Super Saiyan",
       "Super Saiyan 2",
-      "Super Saiyan 3",
+      "Majin",
       "Super Saiyan 4",
       "Super Saiyan God",
       "Super Saiyan Blue (SSGSS)",
       "Super Saiyan Blue Evolution",
       "Ultra Ego",
     ],
-    biography: "The Prince of all Saiyans.",
+    biography: "The Saiyan Prince",
     img: "vegeta.webp",
   },
   {
@@ -70,9 +70,7 @@ const teamMembers = [
     strengths: "Strength",
     weaknesses: "Unconditional Mercy",
     skills: ["Kamehameha", "Kaioken", "Martial Arts"],
-    transformations: [
-      "Super 17",
-    ],
+    transformations: ["Super 17"],
     biography: "The Saiyan who was raised on Earth.",
     img: "Android17.webp",
   },
@@ -83,7 +81,7 @@ function generateTeamCards() {
 
   teamMembers.forEach((member) => {
     const card = document.createElement("div");
-    card.classList.add("col-md-3");
+    card.classList.add("col-md-4", "divcardborders", "p-3", "m-0");
 
     // style the bg color based on position
 
@@ -97,14 +95,14 @@ function generateTeamCards() {
         backgroundColor = "green";
         break;
       case "android":
-          backgroundColor = "blue";
-          break;
+        backgroundColor = "blue";
+        break;
     }
 
     card.style.backgroundColor = backgroundColor;
 
     card.innerHTML = `
-    <div class="card divcardborders">
+    <div class="card divcardborders p-3">
     <img src="${member.img}" class="card-img-top imgsizing1">
     <div class="card-body">
       <h1 class="card-title">${member.name}</h5>
@@ -114,20 +112,20 @@ function generateTeamCards() {
         <li><strong>Skills:</strong> ${member.skills}</li>
         <li><strong>Transformations:</strong>
           <ul>
-            <li>${member.transformations[0]}</li>
-            <li>${member.transformations[1]}</li>
-            <li>${member.transformations[2]}</li>
-            <li>${member.transformations[3]}</li>
-            <li>${member.transformations[4]}</li>
-            <li>${member.transformations[5]}</li>
-            <li>${member.transformations[6]}</li>
-            <li>${member.transformations[7]}</li>
+            ${member.transformations
+              .map(
+                (transformation, index) => `
+              <li>${transformation}</li>
+            `
+              )
+              .join("")}
           </ul>
         </li>
       </ul>
     </div>
   </div>
-        `;
+`;
+
     teamCardsContainer.appendChild(card);
   });
 }
