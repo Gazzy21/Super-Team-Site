@@ -27,3 +27,8 @@ body::before {
 .headersizing {
     height: 15vw;
 }
+
+.mybordertop {
+    border-top: 2px solid black;
+    margin-top: 2vw;
+  }

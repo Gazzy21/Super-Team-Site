@@ -44,7 +44,7 @@ const teamMembers = [
   {
     name: "Gohan",
     age: 27,
-    race: "Saiyan",
+    race: "Half-Saiyan",
     strengths: "Intelligence",
     weaknesses: "Unconditional Mercy",
     skills: ["Special Beam Cannon", "Masenko", "Father-Son Kamehameha"],
@@ -112,6 +112,9 @@ function generateTeamCards() {
       case "human":
         backgroundColor = "white";
         break;
+      case "half-saiyan":
+          backgroundColor = "purple";
+          break;
     }
 
     card.style.backgroundColor = backgroundColor;
