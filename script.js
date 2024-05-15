@@ -3,7 +3,7 @@
 const teamMembers = [
   {
     name: "Son Goku",
-    age: 47,
+    age: 43,
     race: "Saiyan",
     strengths: "Strength",
     weaknesses: "Unconditional Mercy",
@@ -19,7 +19,7 @@ const teamMembers = [
       "Mastered Ultra Instinct",
     ],
     biography: "The Legendary Saiyan",
-    img: "goku.webp",
+    img: "memberimgs/goku.webp",
   },
   {
     name: "Vegeta",
@@ -39,18 +39,7 @@ const teamMembers = [
       "Ultra Ego",
     ],
     biography: "The Saiyan Prince",
-    img: "vegeta.webp",
-  },
-  {
-    name: "Piccolo",
-    age: 47,
-    race: "Namekian",
-    strengths: "Intelligence",
-    weaknesses: "Unconditional Mercy",
-    skills: ["Special Beam Cannon", "Demon Wave", "Light Grenade"],
-    transformations: ["Yellow", "Orange"],
-    biography: "Namekian who tried to destroy Earth.",
-    img: "piccolo.webp",
+    img: "memberimgs/vegeta.webp",
   },
   {
     name: "Gohan",
@@ -61,18 +50,41 @@ const teamMembers = [
     skills: ["Special Beam Cannon", "Masenko", "Father-Son Kamehameha"],
     transformations: ["Super Saiyan", "Super Saiyan 2", "Mystic", "Beast"],
     biography: "Son of a true warrior.",
-    img: "gohan.png",
+    img: "memberimgs/gohan.png",
   },
   {
-    name: "Android 17",
+    name: "Piccolo",
     age: 47,
-    race: "Android",
-    strengths: "Strength",
+    race: "Namekian",
+    strengths: "Intelligence",
     weaknesses: "Unconditional Mercy",
-    skills: ["Kamehameha", "Kaioken", "Martial Arts"],
+    skills: ["Special Beam Cannon", "Demon Wave", "Light Grenade"],
+    transformations: ["Yellow", "Orange"],
+    biography: "Namekian who tried to destroy Earth.",
+    img: "memberimgs/piccolo.webp",
+  },
+  
+  {
+    name: "Android 17",
+    age: 24,
+    race: "Android",
+    strengths: "Infinite Energy Supply",
+    weaknesses: "Overconfidence",
+    skills: ["Hell's Flash", "Super Electric Strike", "Photon Flash"],
     transformations: ["Super 17"],
-    biography: "The Saiyan who was raised on Earth.",
-    img: "Android17.webp",
+    biography: "The Relentless Android",
+    img: "memberimgs/Android17.webp",
+  },
+  {
+    name: "Krillin",
+    age: 44,
+    race: "Human",
+    strengths: "Tactical Intelligence",
+    weaknesses: "Physical Limits",
+    skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
+    transformations: ["Unlock Potential", "Mystic Attack Boost"],
+    biography: "Earth's Foremost Fighter",
+    img: "memberimgs/Krillin.png",
   },
 ];
 
@@ -96,6 +108,9 @@ function generateTeamCards() {
         break;
       case "android":
         backgroundColor = "blue";
+        break;
+      case "human":
+        backgroundColor = "white";
         break;
     }
 

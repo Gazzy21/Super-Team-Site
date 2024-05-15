@@ -5,3 +5,25 @@
 .imgsizing1 {
     height: 25vw;
 }
+
+body {
+    position: relative; /* Make sure the body has a positioning context */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("backgroundimgs/DBearthBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px); /* Adjust the blur radius as needed */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+.headersizing {
+    height: 15vw;
+}
