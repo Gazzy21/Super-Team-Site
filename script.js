@@ -19,7 +19,7 @@ const teamMembers = [
       "Mastered Ultra Instinct",
     ],
     biography: "The Legendary Saiyan",
-    img: "memberimgs/goku.webp",
+    img: ["memberimgs/goku.webp", "memberimgs/SSJ1goku"]
   },
   {
     name: "Vegeta",
@@ -140,7 +140,10 @@ function generateTeamCards() {
           </ul>
         </li>
       </ul>
-    </div>
+      <div class="text-center">
+      <button type="button" class="btn btn-primary text-center">Power Up</button>
+      </div> 
+      </div>
   </div>
 `;
 
