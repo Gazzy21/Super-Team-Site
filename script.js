@@ -69,7 +69,13 @@ const teamMembers = [
     skills: ["Special Beam Cannon", "Masenko", "Father-Son Kamehameha"],
     transformations: ["Super Saiyan", "Super Saiyan 2", "Mystic", "Beast"],
     biography: "Champion of Justice",
-    img: ["memberimgs/gohan.png"],
+    img: [
+      "memberimgs/gohan/gohan.png",
+      "memberimgs/gohan/SSJ1gohan.jpg",
+      "memberimgs/gohan/SSJ2gohan.png",
+      "memberimgs/gohan/MYSTICgohan.png",
+      "memberimgs/gohan/BEASTgohan.png",
+    ],
   },
   {
     name: "Piccolo",
@@ -80,7 +86,11 @@ const teamMembers = [
     skills: ["Special Beam Cannon", "Demon Wave", "Light Grenade"],
     transformations: ["Potential Unleashed", "Orange"],
     biography: "Protector of Earth",
-    img: ["memberimgs/piccolo.webp"],
+    img: [
+      "memberimgs/piccolo/piccolo.webp",
+      "memberimgs/piccolo/potentialunleashedpiccolo.webp",
+      "memberimgs/piccolo/orangepiccolo.png",
+    ],
   },
   {
     name: "Android 17",
@@ -91,7 +101,7 @@ const teamMembers = [
     skills: ["Hell's Flash", "Super Electric Strike", "Photon Flash"],
     transformations: ["Super 17"],
     biography: "The Relentless Android",
-    img: ["memberimgs/Android17.webp"],
+    img: ["memberimgs/android17/Android17.webp"],
   },
   {
     name: "Krillin",
@@ -102,7 +112,7 @@ const teamMembers = [
     skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
     transformations: ["Unlock Potential", "Mystic Attack Boost"],
     biography: "Earth's Foremost Fighter",
-    img: ["memberimgs/Krillin.png"],
+    img: ["memberimgs/krillin/krillin.webp"],
   },
 ];
 
@@ -139,34 +149,30 @@ function generateTeamCards() {
     const imageId = `image-${index}`;
 
     card.innerHTML = `
-          <div class="card divcardborders p-3">
-              <img src="${
-                member.img[0]
-              }" class="card-img-top imgsizing1" id="${imageId}">
-              <div class="card-body">
-                  <h1 class="card-title">${member.name}</h1>
-                  <h3 class="card-text">${member.biography}</h3>
-                  <ul>
-                      <li><strong>Race:</strong> ${member.race}</li>
-                      <li><strong>Skills:</strong> ${member.skills.join(
-                        ", "
-                      )}</li>
-                      <li><strong>Transformations:</strong>
-                          <ul>
-                              ${member.transformations
-                                .map(
-                                  (transformation) =>
-                                    `<li>${transformation}</li>`
-                                )
-                                .join("")}
-                          </ul>
-                      </li>
-                  </ul>
-                  <div class="text-center">
-                      <button type="button" class="btn btn-primary text-center" id="${powerupId}">Power Up</button>
-                  </div>
-              </div>
-          </div>
+    <div class="card divcardborders p-3 cardsizing">
+    <img src="${member.img[0]}" class="card-img-top imgsizing1" id="${imageId}">
+    <div class="card-body">
+        <h1 class="card-title">${member.name}</h1>
+        <h3 class="card-text" style="overflow-wrap: break-word; max-height: 100px; overflow-y: auto;">${
+          member.biography
+        }</h3>
+        <ul>
+            <li><strong>Race:</strong> ${member.race}</li>
+            <li><strong>Skills:</strong> ${member.skills.join(", ")}</li>
+            <li><strong>Transformations:</strong>
+                <ul>
+                    ${member.transformations
+                      .map((transformation) => `<li>${transformation}</li>`)
+                      .join("")}
+                </ul>
+            </li>
+        </ul>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary text-center" id="${powerupId}">Power Up</button>
+        </div>
+    </div>
+</div>
+
       `;
 
     teamCardsContainer.appendChild(card);
