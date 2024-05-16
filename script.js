@@ -19,7 +19,7 @@ const teamMembers = [
       "Mastered Ultra Instinct",
     ],
     biography: "The Legendary Saiyan",
-    img: ["memberimgs/goku.webp", "memberimgs/SSJ1goku"]
+    img: ["memberimgs/goku/goku.webp", "memberimgs/goku/SSJ1goku.webp"],
   },
   {
     name: "Vegeta",
@@ -63,7 +63,7 @@ const teamMembers = [
     biography: "Namekian who tried to destroy Earth.",
     img: "memberimgs/piccolo.webp",
   },
-  
+
   {
     name: "Android 17",
     age: 24,
@@ -113,15 +113,49 @@ function generateTeamCards() {
         backgroundColor = "white";
         break;
       case "half-saiyan":
-          backgroundColor = "purple";
-          break;
+        backgroundColor = "purple";
+        break;
     }
+
+    // const images = {
+    //   img1: "memberimgs/goku/goku.webp",
+    //   img2: "memberimgs/goku/SSJ1goku.webp",
+    // };
+
+    // let currentImageKey = "img1";
+    // const imageElement = document.getElementById("image");
+    // const gokPU = document.getElementById("gokuPU");
+
+    // function updateImage() {
+    //   imageElement.src = images[currentImageKey];
+    // }
+
+    // gokuPU.addEventListener("click", () => {
+    //   switch (currentImageKey) {
+    //     case "img1":
+    //       currentImageKey = "img2";
+    //       break;
+    //     case "img2":
+    //       currentImageKey = "img3";
+    //       break;
+    //     case "img3":
+    //       currentImageKey = "img1";
+    //       break;
+    //     // add more cases as needed
+    //     default:
+    //       currentImageKey = "img1";
+    //   }
+    //   updateImage();
+    // });
+
+    // // Initialize the first image
+    // updateImage();
 
     card.style.backgroundColor = backgroundColor;
 
     card.innerHTML = `
     <div class="card divcardborders p-3">
-    <img src="${member.img}" class="card-img-top imgsizing1">
+    <img src="${member.img[0]}" class="card-img-top imgsizing1">
     <div class="card-body">
       <h1 class="card-title">${member.name}</h5>
       <h3 class="card-text">${member.biography}</h3>
