@@ -19,7 +19,17 @@ const teamMembers = [
       "Mastered Ultra Instinct",
     ],
     biography: "The Legendary Saiyan",
-    img: ["memberimgs/goku/goku.webp", "memberimgs/goku/SSJ1goku.webp"],
+    img: [
+      "memberimgs/goku/goku.webp",
+      "memberimgs/goku/SSJ1goku.webp",
+      "memberimgs/goku/SSJ2goku.jpg",
+      "memberimgs/goku/SSJ3goku.jpg",
+      "memberimgs/goku/SSJ4goku.png",
+      "memberimgs/goku/SSGgoku.png",
+      "memberimgs/goku/SSGSSgoku.png",
+      "memberimgs/goku/UIgoku.png",
+      "memberimgs/goku/MUIgoku.png",
+    ],
   },
   {
     name: "Vegeta",
@@ -39,7 +49,16 @@ const teamMembers = [
       "Ultra Ego",
     ],
     biography: "The Saiyan Prince",
-    img: "memberimgs/vegeta.webp",
+    img: [
+      "memberimgs/vegeta/vegeta.webp",
+      "memberimgs/vegeta/SSJ1vegeta.png",
+      "memberimgs/vegeta/MAJINvegeta.png",
+      "memberimgs/vegeta/SSJ4vegeta.png",
+      "memberimgs/vegeta/SSGvegeta.png",
+      "memberimgs/vegeta/SSGSSvegeta.webp",
+      "memberimgs/vegeta/SSGSSEVOvegeta.png",
+      "memberimgs/vegeta/UEvegeta.png",
+    ],
   },
   {
     name: "Gohan",
@@ -49,8 +68,8 @@ const teamMembers = [
     weaknesses: "Unconditional Mercy",
     skills: ["Special Beam Cannon", "Masenko", "Father-Son Kamehameha"],
     transformations: ["Super Saiyan", "Super Saiyan 2", "Mystic", "Beast"],
-    biography: "Son of a true warrior.",
-    img: "memberimgs/gohan.png",
+    biography: "Champion of Justice",
+    img: ["memberimgs/gohan.png"],
   },
   {
     name: "Piccolo",
@@ -59,11 +78,10 @@ const teamMembers = [
     strengths: "Intelligence",
     weaknesses: "Unconditional Mercy",
     skills: ["Special Beam Cannon", "Demon Wave", "Light Grenade"],
-    transformations: ["Yellow", "Orange"],
-    biography: "Namekian who tried to destroy Earth.",
-    img: "memberimgs/piccolo.webp",
+    transformations: ["Potential Unleashed", "Orange"],
+    biography: "Protector of Earth",
+    img: ["memberimgs/piccolo.webp"],
   },
-
   {
     name: "Android 17",
     age: 24,
@@ -73,7 +91,7 @@ const teamMembers = [
     skills: ["Hell's Flash", "Super Electric Strike", "Photon Flash"],
     transformations: ["Super 17"],
     biography: "The Relentless Android",
-    img: "memberimgs/Android17.webp",
+    img: ["memberimgs/Android17.webp"],
   },
   {
     name: "Krillin",
@@ -84,18 +102,16 @@ const teamMembers = [
     skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
     transformations: ["Unlock Potential", "Mystic Attack Boost"],
     biography: "Earth's Foremost Fighter",
-    img: "memberimgs/Krillin.png",
+    img: ["memberimgs/Krillin.png"],
   },
 ];
 
 function generateTeamCards() {
   const teamCardsContainer = document.getElementById("teamCards");
 
-  teamMembers.forEach((member) => {
+  teamMembers.forEach((member, index) => {
     const card = document.createElement("div");
     card.classList.add("col-md-4", "divcardborders", "p-3", "m-0");
-
-    // style the bg color based on position
 
     let backgroundColor;
 
@@ -117,72 +133,53 @@ function generateTeamCards() {
         break;
     }
 
-    // const images = {
-    //   img1: "memberimgs/goku/goku.webp",
-    //   img2: "memberimgs/goku/SSJ1goku.webp",
-    // };
-
-    // let currentImageKey = "img1";
-    // const imageElement = document.getElementById("image");
-    // const gokPU = document.getElementById("gokuPU");
-
-    // function updateImage() {
-    //   imageElement.src = images[currentImageKey];
-    // }
-
-    // gokuPU.addEventListener("click", () => {
-    //   switch (currentImageKey) {
-    //     case "img1":
-    //       currentImageKey = "img2";
-    //       break;
-    //     case "img2":
-    //       currentImageKey = "img3";
-    //       break;
-    //     case "img3":
-    //       currentImageKey = "img1";
-    //       break;
-    //     // add more cases as needed
-    //     default:
-    //       currentImageKey = "img1";
-    //   }
-    //   updateImage();
-    // });
-
-    // // Initialize the first image
-    // updateImage();
-
     card.style.backgroundColor = backgroundColor;
 
+    const powerupId = `powerup-${index}`;
+    const imageId = `image-${index}`;
+
     card.innerHTML = `
-    <div class="card divcardborders p-3">
-    <img src="${member.img[0]}" class="card-img-top imgsizing1">
-    <div class="card-body">
-      <h1 class="card-title">${member.name}</h5>
-      <h3 class="card-text">${member.biography}</h3>
-      <ul>
-        <li><strong>Race:</strong> ${member.race}</li>
-        <li><strong>Skills:</strong> ${member.skills}</li>
-        <li><strong>Transformations:</strong>
-          <ul>
-            ${member.transformations
-              .map(
-                (transformation, index) => `
-              <li>${transformation}</li>
-            `
-              )
-              .join("")}
-          </ul>
-        </li>
-      </ul>
-      <div class="text-center">
-      <button type="button" class="btn btn-primary text-center">Power Up</button>
-      </div> 
-      </div>
-  </div>
-`;
+          <div class="card divcardborders p-3">
+              <img src="${
+                member.img[0]
+              }" class="card-img-top imgsizing1" id="${imageId}">
+              <div class="card-body">
+                  <h1 class="card-title">${member.name}</h1>
+                  <h3 class="card-text">${member.biography}</h3>
+                  <ul>
+                      <li><strong>Race:</strong> ${member.race}</li>
+                      <li><strong>Skills:</strong> ${member.skills.join(
+                        ", "
+                      )}</li>
+                      <li><strong>Transformations:</strong>
+                          <ul>
+                              ${member.transformations
+                                .map(
+                                  (transformation) =>
+                                    `<li>${transformation}</li>`
+                                )
+                                .join("")}
+                          </ul>
+                      </li>
+                  </ul>
+                  <div class="text-center">
+                      <button type="button" class="btn btn-primary text-center" id="${powerupId}">Power Up</button>
+                  </div>
+              </div>
+          </div>
+      `;
 
     teamCardsContainer.appendChild(card);
+
+    const powerupButton = document.getElementById(powerupId);
+    const imageElement = document.getElementById(imageId);
+    let currentImageIndex = 0;
+
+    powerupButton.addEventListener("click", () => {
+      currentImageIndex = (currentImageIndex + 1) % member.img.length;
+      imageElement.src = member.img[currentImageIndex];
+    });
   });
 }
 
-window.onload = generateTeamCards();
+window.onload = generateTeamCards;
