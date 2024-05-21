@@ -114,6 +114,17 @@ const teamMembers = [
     biography: "Earth's Foremost Fighter",
     img: ["memberimgs/krillin/krillin.webp"],
   },
+  {
+    name: "Majin Buu",
+    age: 5000000,
+    race: "Majin",
+    strengths: "Tactical Intelligence",
+    weaknesses: "Physical Limits",
+    skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
+    transformations: ["Unlock Potential", "Mystic Attack Boost"],
+    biography: "Earth's Foremost Fighter",
+    img: ["memberimgs/majinbuu/majinbuu.png", "memberimgs/majinbuu/evilbuu.webp", "memberimgs/majinbuu/kidbuu.png", "memberimgs/majinbuu/superbuu.webp"],
+  },
 ];
 
 function generateTeamCards() {
@@ -141,6 +152,9 @@ function generateTeamCards() {
       case "half-saiyan":
         backgroundColor = "purple";
         break;
+      case "majin":
+          backgroundColor = "pink";
+          break;
     }
 
     card.style.backgroundColor = backgroundColor;
@@ -153,12 +167,15 @@ function generateTeamCards() {
     <img src="${member.img[0]}" class="card-img-top imgsizing1" id="${imageId}">
     <div class="card-body">
         <h1 class="card-title">${member.name}</h1>
-        <h3 class="card-text" style="overflow-wrap: break-word; max-height: 100px; overflow-y: auto;">${
+        <h3 class="card-text" style="overflow-wrap: break-word; max-height: 100px; overflow-y: hidden;">${
           member.biography
         }</h3>
         <ul>
             <li><strong>Race:</strong> ${member.race}</li>
+            <li><strong>Age:</strong> ${member.age.toLocaleString()}</li>
             <li><strong>Skills:</strong> ${member.skills.join(", ")}</li>
+            <li><strong>Strength:</strong> ${member.strengths}</li>
+            <li><strong>Weakness:</strong> ${member.weaknesses}</li>
             <li><strong>Transformations:</strong>
                 <ul>
                     ${member.transformations
