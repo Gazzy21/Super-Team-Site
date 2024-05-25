@@ -101,7 +101,10 @@ const teamMembers = [
     skills: ["Hell's Flash", "Super Electric Strike", "Photon Flash"],
     transformations: ["Super 17"],
     biography: "The Relentless Android",
-    img: ["memberimgs/android17/Android17.webp"],
+    img: [
+      "memberimgs/android17/Android17.webp",
+      "memberimgs/android17/SUPER17.webp",
+    ],
   },
   {
     name: "Krillin",
@@ -112,18 +115,120 @@ const teamMembers = [
     skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
     transformations: ["Unlock Potential", "Mystic Attack Boost"],
     biography: "Earth's Foremost Fighter",
-    img: ["memberimgs/krillin/krillin.webp"],
+    img: [
+      "memberimgs/krillin/krillin.png",
+      "memberimgs/krillin/POTENTIALUNLEASHEDkrillin.png",
+    ],
   },
   {
     name: "Majin Buu",
     age: 5000000,
     race: "Majin",
-    strengths: "Tactical Intelligence",
-    weaknesses: "Physical Limits",
-    skills: ["Solar Flare", "Destructo Disc", "Scattering Bullet"],
-    transformations: ["Unlock Potential", "Mystic Attack Boost"],
-    biography: "Earth's Foremost Fighter",
-    img: ["memberimgs/majinbuu/majinbuu.png", "memberimgs/majinbuu/evilbuu.webp", "memberimgs/majinbuu/kidbuu.png", "memberimgs/majinbuu/superbuu.webp"],
+    strengths: "Regeneration and Absorption Abilities",
+    weaknesses: "Childlike Mentality and Vulnerability to Sealing Techniques",
+    skills: ["Vanishing Ball", "Innocence Cannon", "Chocolate Beam"],
+    transformations: ["Innocent Buu", "Evil Buu", "Super Buu", "Kid Buu"],
+    biography: "The Innocent Destroyer",
+    img: [
+      "memberimgs/majinbuu/majinbuu.png",
+      "memberimgs/majinbuu/evilbuu.webp",
+      "memberimgs/majinbuu/superbuu.webp",
+      "memberimgs/majinbuu/kidbuu.png",
+    ],
+  },
+  {
+    name: "Frieza",
+    age: 1000,
+    race: "Acrosian",
+    strengths: "Combat Prowess and Strategic Intelligence",
+    weaknesses: "Overconfidence and Vulnerability to Saiyan Transformations",
+    skills: ["Death Beam", "Supernova", "Imprisonment Ball"],
+    transformations: [
+      "First Form",
+      "Final Form",
+      "100% Power",
+      "Golden Frieza",
+    ],
+    biography: "The Galactic Emperor",
+    img: [
+      "memberimgs/frieza/frieza.webp",
+      "memberimgs/frieza/FULLPOWERfrieza.webp",
+      "memberimgs/frieza/GOLDENfrieza.webp",
+      "memberimgs/frieza/BLACKfrieza.webp",
+    ],
+  },
+
+  {
+    name: "Cell",
+    age: "Unknown (created in Age 786)",
+    race: "Bio-Android",
+    strengths: "Adaptability and Regeneration",
+    weaknesses: "Overconfidence and Imperfect Form Vulnerabilities",
+    skills: ["Solar-Kamehameha", "Psycho Crash", "Regeneration"],
+    transformations: [
+      "Imperfect Form",
+      "Semi-Perfect Form",
+      "Perfect Form",
+      "Super Perfect Form",
+    ],
+    biography: "The Ultimate Bio-Android",
+    img: [
+      "memberimgs/cell/IMPERFECTcell.webp",
+      "memberimgs/cell/SEMIPERFECTcell.png",
+      "memberimgs/cell/PERFECTcell.png",
+      "memberimgs/cell/SUPERPERFECTcell.png",
+    ],
+  },
+  {
+    name: "Mr. Satan",
+    age: 41,
+    race: "Human",
+    strengths: "Martial Arts and Charisma",
+    weaknesses: "Lack of Actual Superhuman Abilities",
+    skills: ["Hercule Special", "Dynamic Mess Em Up Punch", "Megaton Punch"],
+    transformations: ["none"],
+    biography: "The World Martial Arts Champion",
+    img: [
+      "memberimgs/mrsatan/mrsatan.png",
+      "memberimgs/mrsatan/mrsatan1.webp",
+      "memberimgs/mrsatan/mrsatan2.webp",
+    ],
+  },
+  {
+    name: "Broly",
+    age: 48,
+    race: "Saiyan",
+    strengths: "Legendary Super Saiyan Power and Extreme Strength",
+    weaknesses: "Emotional Instability",
+    skills: ["Eraser Cannon", "Gigantic Meteor", "Omega Blaster"],
+    transformations: [
+      "Wrathful",
+      "Super Saiyan Full Power",
+      "Legendary Super Saiyan",
+    ],
+    biography: "The Legendary Super Saiyan",
+    img: [
+      "memberimgs/broly/broly.png",
+      "memberimgs/broly/WRATHFULbroly.png",
+      "memberimgs/broly/SUPERbroly.png",
+      "memberimgs/broly/LSSJbroly.png",
+    ],
+  },
+  {
+    name: "Goku Black and Zamasu",
+    age: "Unknown",
+    race: "Saiyan (Goku Black) / Shinjin (Zamasu)",
+    strengths: "Immortality, Godly Ki Manipulation",
+    weaknesses:
+      "Overconfidence, Vulnerability to Techniques Bypassing Immortality",
+    skills: ["Black Power Ball", "Divine Lasso", "Blades of Judgment"],
+    transformations: ["Super Saiyan Rose (Goku Black)", "Fused Zamasu"],
+    biography: "The Divine Duo",
+    img: [
+      "memberimgs/goku-black-zamasu/gbz.webp",
+      "memberimgs/goku-black-zamasu/ROSEgbz.jpg",
+      "memberimgs/goku-black-zamasu/FusedZamasu.png",
+    ],
   },
 ];
 
@@ -153,8 +258,17 @@ function generateTeamCards() {
         backgroundColor = "purple";
         break;
       case "majin":
-          backgroundColor = "pink";
-          break;
+        backgroundColor = "pink";
+        break;
+      case "acrosian":
+        backgroundColor = "darkgrey";
+        break;
+      case "bio-android":
+        backgroundColor = "limegreen";
+        break;
+      case "saiyan (goku black) / shinjin (zamasu)":
+        backgroundColor = "black";
+        break;
     }
 
     card.style.backgroundColor = backgroundColor;

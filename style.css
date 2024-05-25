@@ -32,7 +32,3 @@ body::before {
     border-top: 2px solid black;
     margin-top: 2vw;
   }
-
-  .cardsizing {
-    height: 1100px;
-  }
